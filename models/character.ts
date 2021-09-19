@@ -12,5 +12,5 @@ export interface CharacterModel {
   location: LocationModel;
   episode: [EpisodeModel];
   created: String;
-  selected: boolean;
+  selected?: boolean;
 }

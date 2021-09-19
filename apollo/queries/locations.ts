@@ -18,3 +18,23 @@ export const GET_LOCATIONS = (page: number, name: string) => {
   }
 `;
 };
+
+export const GET_LOCATION = (id) => {
+  return gql`
+  query {
+    location(id: ${id}) {
+      id
+      name
+      type
+      dimension
+      created
+    residents {
+        id
+        name
+        species
+        image
+      }
+    }
+  }
+  `;
+};

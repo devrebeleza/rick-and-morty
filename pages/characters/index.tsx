@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "../../styles/Home.module.css";
-import { ComponentCharacters } from "../../components/characters/ComponentCharacters";
+import { ContainerCharacters } from "../../containers/characters/ContainerCharacters";
 import { PersonalHead } from "../../components/generals/Head";
 import NavBar from "../../components/generals/Header";
 import { useQuery } from "@apollo/client";
@@ -8,6 +8,11 @@ import { GET_CHARACTERS } from "../../apollo/queries/characters";
 import { FooterPage } from "../../components/generals/FooterPage";
 import { SpinLoader } from "../../components/generals/SpinLoader";
 import { SearchBar } from "../../components/generals/SearchBar";
+import { CharacterModel } from "../../models/character";
+import {
+  getLocalStorage,
+  setUnsetElementLocalStorage,
+} from "../../contexts/LocalStorageFunctions";
 
 const Characters = () => {
   const [numberPage, setNumberPage] = useState<number>(1);
@@ -16,11 +21,27 @@ const Characters = () => {
 
   let listCharacters = [];
   let totalPages = 0;
+
+  /*             -------------               */
   if (data) {
-    listCharacters = [...data.characters.results];
+    let listStorageFavorite = [];
+    listStorageFavorite = getLocalStorage("FavoritesCharacaters");
+    //
+    data.characters.results.forEach((element) => {
+      const findElement = listStorageFavorite.find(
+        (item) => item.id == element.id
+      );
+      const newCharacter = Object.assign(
+        { selected: !findElement ? false : true },
+        element
+      );
+      listCharacters.push(newCharacter);
+    });
+    //
     totalPages = data.characters.info.pages;
   }
 
+  /*             -------------               */
   const handleSearchByName = (e) => {
     let filter = e.target.value;
     if (filter.length > 2 || filter.length === 0) {
@@ -29,6 +50,13 @@ const Characters = () => {
     }
   };
 
+  /*             -------------               */
+  const setFavorites = (character: CharacterModel) => {
+    character.selected = !character.selected;
+    setUnsetElementLocalStorage("FavoritesCharacaters", character);
+  };
+
+  /*             -------------               */
   return (
     <div className={styles.container}>
       <PersonalHead title="Characters" />
@@ -39,7 +67,10 @@ const Characters = () => {
           <SearchBar handleSearch={handleSearchByName} />
         </div>
         {loading ? <SpinLoader /> : ""}
-        <ComponentCharacters list={listCharacters} />
+        <ContainerCharacters
+          list={listCharacters}
+          setFavorites={setFavorites}
+        />
       </main>
       <FooterPage
         totalPages={totalPages}

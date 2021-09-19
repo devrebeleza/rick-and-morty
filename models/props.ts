@@ -13,3 +13,8 @@ export interface EpisodesProps {
 export interface LocationsProps {
   location: LocationModel;
 }
+
+export interface CharacterPropsFavorites {
+  character: CharacterModel;
+  setFavorites: (character: CharacterModel) => void;
+}

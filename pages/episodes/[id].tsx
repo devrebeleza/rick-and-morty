@@ -1,8 +1,10 @@
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import { GET_CHARACTER } from "../../apollo/queries/characters";
+import { GET_EPISODE } from "../../apollo/queries/episodes";
+import { ComponentCharacters } from "../../components/characters/ComponentCharacters";
 import { OneCharacter } from "../../components/characters/OneCharacter";
 import { ComponentEpisodes } from "../../components/episodes/ComponentEpisodes";
+import { OneEpisode } from "../../components/episodes/OneEpisode";
 import { PersonalHead } from "../../components/generals/Head";
 import NavBar from "../../components/generals/Header";
 import { SpinLoader } from "../../components/generals/SpinLoader";
@@ -10,37 +12,33 @@ import { CardLocation } from "../../components/locations/CardLocation";
 import styles from "../../styles/Home.module.css";
 import { Back } from "../../styles/styles";
 
-const ACharacter = () => {
+const AEpisode = () => {
   const router = useRouter();
   const { id } = router.query;
-  const { loading, data } = useQuery(GET_CHARACTER(id));
+  const { loading, data } = useQuery(GET_EPISODE(id));
 
-  let listEpisodes = [];
+  let listCharacters = [];
   if (data) {
-    listEpisodes = [...data.character.episode];
+    listCharacters = [...data.episode.characters];
   }
 
   return (
     <>
       <PersonalHead title={id} />
-      <NavBar page="character" />
+      <NavBar page="episode" />
       <main className={styles.main}>
         <Back onClick={() => router.back()}> ◀ Go Back</Back>
         <div className={styles.preTitle}>
-          <h1>Character Page</h1>
+          <h1>Episode Page</h1>
         </div>
         {loading ? (
           <SpinLoader />
         ) : (
           <>
-            <OneCharacter character={data.character} />
+            <OneEpisode episode={data.episode} />
             <div>
-              Origin Location:
-              <CardLocation location={data.character.origin} />
-              Actual Location:{" "}
-              <CardLocation location={data.character.location} />
-              Episodes ({listEpisodes.length}):
-              <ComponentEpisodes list={listEpisodes} />
+              Characters ({listCharacters.length}):
+              <ComponentCharacters list={listCharacters} />
             </div>
           </>
         )}
@@ -49,4 +47,4 @@ const ACharacter = () => {
   );
 };
 
-export default ACharacter;
+export default AEpisode;

@@ -1,20 +1,18 @@
 import Image from "next/image";
-import { CharacterProps } from "../../models/props";
 import { Card } from "../../styles/styles";
 import styles from "../../styles/Home.module.css";
 import Link from "next/link";
 import { FavoriteCharacter } from "./FavoriteCharacter";
 import { useState } from "react";
+import { CharacterPropsFavorites } from "../../models/props";
 
-export const CardCharacter = (props: CharacterProps) => {
+export const CardCharacter = (props: CharacterPropsFavorites) => {
   const [characterSelected, setCharacterSelected] = useState(
     props.character.selected
   );
   const checkCharacter = () => {
-    console.log(props.character.id, props.character.name);
-
+    props.setFavorites(props.character);
     setCharacterSelected(!characterSelected);
-    console.log(characterSelected);
   };
   return (
     <Card className={styles.card}>
@@ -32,7 +30,7 @@ export const CardCharacter = (props: CharacterProps) => {
       </Link>
       <FavoriteCharacter
         checkCharacter={checkCharacter}
-        characterSelected={characterSelected}
+        characterSelected={props.character.selected}
       />
     </Card>
   );
