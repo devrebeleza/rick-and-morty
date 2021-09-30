@@ -1,13 +1,17 @@
+import { DivSearch, InputSearch, LabelSearch } from "../../styles/styles";
+
 export const SearchBar = ({ handleSearch }) => {
   return (
-    <div>
-      <input
+    <DivSearch>
+      <InputSearch
         type="text"
         name="filter-character"
         id="filter"
         placeholder="Filter"
         onInput={handleSearch}
-      />{" "}
-    </div>
+        autocomplete="off"
+      />
+      <LabelSearch htmlFor="filter-character">Filter</LabelSearch>
+    </DivSearch>
   );
 };

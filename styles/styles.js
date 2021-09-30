@@ -126,3 +126,64 @@ export const Back = styled.a`
   }
   cursor: pointer;
 `;
+
+/* Input search bar */
+/* https://codepen.io/lucasyem/pen/ZEEYKdj */
+
+export const DivSearch = styled.div`
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 50%;
+`;
+
+export const InputSearch = styled.input`
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.2rem;
+  color: #66b3ff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .LabelSearch {
+    font-size: 1rem;
+    cursor: text;
+    top: 20px;
+  }
+  &:required,
+  &:invalid {
+    box-shadow: none;
+  }
+  &:focus {
+    ~ .LabelSearch {
+      position: absolute;
+      top: 0;
+      display: block;
+      transition: 0.2s;
+      font-size: 1rem;
+      color: #66b3ff;
+      
+    }
+    padding-bottom: 6px;  
+    
+    border-width: 3px;
+    border-image: linear-gradient(to right, #083fa6,#27ebf2);
+    border-image-slice: 1;
+`;
+
+export const LabelSearch = styled.label`
+  position: absolute;
+  top: 10;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b;
+`;

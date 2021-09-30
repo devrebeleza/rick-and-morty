@@ -1,11 +1,21 @@
 import Link from "next/link";
 import { NavUlLi, Nav, Ul, Li, A } from "../../styles/styles";
+import Hamburger from "./Hamburger";
+import { useState } from "react";
 
 const NavBar = (props) => {
+  const [hamburgerOpen, setHamburgerOpen] = useState(false);
+
+  const toggleHamburger = () => {
+    setHamburgerOpen(!hamburgerOpen);
+  };
   return (
     <NavUlLi>
+      <div className="hamburger" onClick={toggleHamburger}>
+        <Hamburger isOpen={hamburgerOpen} />
+      </div>
       <Nav>
-        <Ul>
+        <ul className="navigationUl">
           {props.page != "dashboard" ? (
             <Li>
               <Link href="/dashboard" passHref>
@@ -41,8 +51,45 @@ const NavBar = (props) => {
               </Link>
             </Li>
           ) : null}
-        </Ul>
+        </ul>
       </Nav>
+
+      <style jsx>{`
+        .navigation {
+          width: 100%;
+          height: 50px;
+        }
+
+        .navigationUl {
+          display: flex;
+          flex-wrap: wrap;
+          float: right;
+          margin: 0px;
+          padding: 0px;
+          overflow: hidden;
+          transition: height 0.92s ease-out, width 0.92s ease-out;
+        }
+        .navigation Ul Li {
+          list-style-type: none;
+          padding-right: 10px;
+        }
+        .hamburger {
+          display: none;
+          z-index: 6;
+        }
+        @media (max-width: 767px) {
+          .hamburger {
+            display: fixed;
+            padding-top: 10px;
+            margin-left: 10px;
+            z-index: 6;
+          }
+
+          .navigationUl {
+            display: ${hamburgerOpen ? "inline" : "none"};
+          }
+        }
+      `}</style>
     </NavUlLi>
   );
 };
