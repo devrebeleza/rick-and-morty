@@ -254,7 +254,6 @@
 
 .back_to_top {
   position: fixed;
-  /* display: none; */
   background: #66b3ff;
   color: #fff;
   width: 44px;
