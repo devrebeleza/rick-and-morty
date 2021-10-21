@@ -249,3 +249,28 @@
 .favme.is_animating {
   animation: favme-anime 0.3s;
 }
+
+/* Back to top button */
+
+.back_to_top {
+  position: fixed;
+  /* display: none; */
+  background: #66b3ff;
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  line-height: 1;
+  font-size: 16px;
+  border-radius: 50%;
+  right: 15px;
+  bottom: 15px;
+  transition: background 0.5s;
+  z-index: 11;
+  cursor: pointer;
+}
+
+.back_to_top i {
+  padding-top: 12px;
+  color: #fff;
+}

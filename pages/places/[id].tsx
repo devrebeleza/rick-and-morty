@@ -5,6 +5,7 @@ import { ComponentCharacters } from "../../components/characters/ComponentCharac
 import { Footer } from "../../components/generals/Footer";
 import { PersonalHead } from "../../components/generals/Head";
 import NavBar from "../../components/generals/Header";
+import { ScrollUp } from "../../components/generals/ScrollUp";
 import { SpinLoader } from "../../components/generals/SpinLoader";
 import { CardLocation } from "../../components/locations/CardLocation";
 import styles from "../../styles/Home.module.css";
@@ -42,6 +43,7 @@ const AEpisode = () => {
         )}
       </main>
       <Footer />
+      <ScrollUp />
     </>
   );
 };

@@ -10,6 +10,7 @@ import { CardLocation } from "../../components/locations/CardLocation";
 import styles from "../../styles/Home.module.css";
 import { Back } from "../../styles/styles";
 import { Footer } from "../../components/generals/Footer";
+import { ScrollUp } from "../../components/generals/ScrollUp";
 
 const ACharacter = () => {
   const router = useRouter();
@@ -47,6 +48,7 @@ const ACharacter = () => {
         )}
       </main>
       <Footer />
+      <ScrollUp />
     </>
   );
 };

@@ -9,6 +9,7 @@ import { SearchBar } from "../../components/generals/SearchBar";
 import { SpinLoader } from "../../components/generals/SpinLoader";
 import styles from "../../styles/Home.module.css";
 import { Footer } from "../../components/generals/Footer";
+import { ScrollUp } from "../../components/generals/ScrollUp";
 
 const Episodes = () => {
   const [numberPage, setNumberPage] = useState<number>(1);
@@ -48,6 +49,7 @@ const Episodes = () => {
         setNumberPage={setNumberPage}
       />
       <Footer />
+      <ScrollUp />
     </div>
   );
 };

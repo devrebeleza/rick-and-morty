@@ -10,6 +10,7 @@ import {
   setUnsetElementLocalStorage,
 } from "../../contexts/LocalStorageFunctions";
 import { Footer } from "../../components/generals/Footer";
+import { ScrollUp } from "../../components/generals/ScrollUp";
 
 const Characters = () => {
   const [numberPage, setNumberPage] = useState<number>(1);
@@ -58,6 +59,7 @@ const Characters = () => {
         setNumberPage={setNumberPage}
       />
       <Footer />
+      <ScrollUp />
     </div>
   );
 };
