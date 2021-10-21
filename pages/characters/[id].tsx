@@ -9,6 +9,7 @@ import { SpinLoader } from "../../components/generals/SpinLoader";
 import { CardLocation } from "../../components/locations/CardLocation";
 import styles from "../../styles/Home.module.css";
 import { Back } from "../../styles/styles";
+import { Footer } from "../../components/generals/Footer";
 
 const ACharacter = () => {
   const router = useRouter();
@@ -45,6 +46,7 @@ const ACharacter = () => {
           </>
         )}
       </main>
+      <Footer />
     </>
   );
 };

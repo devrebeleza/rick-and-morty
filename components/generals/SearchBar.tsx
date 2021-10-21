@@ -11,7 +11,7 @@ export const SearchBar = ({ handleSearch }) => {
         onInput={handleSearch}
         autocomplete="off"
       />
-      <LabelSearch htmlFor="filter-character">Filter</LabelSearch>
+      <LabelSearch htmlFor="filter-character"></LabelSearch>
     </DivSearch>
   );
 };

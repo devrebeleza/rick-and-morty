@@ -2,6 +2,7 @@ import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { GET_LOCATION } from "../../apollo/queries/locations";
 import { ComponentCharacters } from "../../components/characters/ComponentCharacters";
+import { Footer } from "../../components/generals/Footer";
 import { PersonalHead } from "../../components/generals/Head";
 import NavBar from "../../components/generals/Header";
 import { SpinLoader } from "../../components/generals/SpinLoader";
@@ -40,6 +41,7 @@ const AEpisode = () => {
           </>
         )}
       </main>
+      <Footer />
     </>
   );
 };

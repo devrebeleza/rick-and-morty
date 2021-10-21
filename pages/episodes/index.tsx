@@ -8,6 +8,7 @@ import NavBar from "../../components/generals/Header";
 import { SearchBar } from "../../components/generals/SearchBar";
 import { SpinLoader } from "../../components/generals/SpinLoader";
 import styles from "../../styles/Home.module.css";
+import { Footer } from "../../components/generals/Footer";
 
 const Episodes = () => {
   const [numberPage, setNumberPage] = useState<number>(1);
@@ -46,6 +47,7 @@ const Episodes = () => {
         numberPage={numberPage}
         setNumberPage={setNumberPage}
       />
+      <Footer />
     </div>
   );
 };

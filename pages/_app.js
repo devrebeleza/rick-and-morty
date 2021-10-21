@@ -3,7 +3,6 @@ import { ApolloProvider } from "@apollo/client";
 import client from "../apollo/client";
 import { ThemeProvider } from "styled-components";
 import { useEffect, useState } from "react";
-import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import {
   lightTheme,

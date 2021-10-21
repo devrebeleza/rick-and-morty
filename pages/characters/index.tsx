@@ -13,6 +13,7 @@ import {
   getLocalStorage,
   setUnsetElementLocalStorage,
 } from "../../contexts/LocalStorageFunctions";
+import { Footer } from "../../components/generals/Footer";
 
 const Characters = () => {
   const [numberPage, setNumberPage] = useState<number>(1);
@@ -77,6 +78,7 @@ const Characters = () => {
         numberPage={numberPage}
         setNumberPage={setNumberPage}
       />
+      <Footer />
     </div>
   );
 };

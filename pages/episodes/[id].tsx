@@ -5,6 +5,7 @@ import { ComponentCharacters } from "../../components/characters/ComponentCharac
 import { OneCharacter } from "../../components/characters/OneCharacter";
 import { ComponentEpisodes } from "../../components/episodes/ComponentEpisodes";
 import { OneEpisode } from "../../components/episodes/OneEpisode";
+import { Footer } from "../../components/generals/Footer";
 import { PersonalHead } from "../../components/generals/Head";
 import NavBar from "../../components/generals/Header";
 import { SpinLoader } from "../../components/generals/SpinLoader";
@@ -43,6 +44,7 @@ const AEpisode = () => {
           </>
         )}
       </main>
+      <Footer />
     </>
   );
 };
