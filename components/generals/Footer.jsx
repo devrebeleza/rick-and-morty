@@ -22,7 +22,7 @@ export const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          © 2021 Copyright: devReBeleza
+          © 2021 Copyright devReBeleza
         </a>
         <a
           href="https://www.linkedin.com/in/renzogarcia/"

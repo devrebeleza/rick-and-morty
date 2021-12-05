@@ -273,3 +273,15 @@
   padding-top: 12px;
   color: #fff;
 }
+
+/* Previous Next Page*/
+.pageButtonEnabled {
+  cursor: pointer;
+}
+
+.pageButtonDisabled {
+  cursor: default;
+  pointer-events: none;
+  color: gray;
+  visibility: hidden;
+}
