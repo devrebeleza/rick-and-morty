@@ -4,6 +4,18 @@ Web ReactJS that consume rick and morty api with GraphQL
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Builded with 🛠️
+
+_Herramientas utilizadas_
+
+- [NextJS](https://nextjs.org/) - The React Framework for Production
+- [ReactJS](https://reactjs.org/) - A JavaScript library for building user interfaces
+- [GraphQL](https://graphql.org/) - A query language for your API
+- [Apollo Client](https://www.apollographql.com/docs/react/) - Comprehensive state management library for JavaScript that enables you to manage both local and remote data with GraphQL
+- [TypeScript](https://www.typescriptlang.org/) - TypeScript is a strongly typed programming language that builds on JavaScript.
+- [Styled Components](https://styled-components.com/) - Library for React and React Native developers. It allows you to use component-level styles in your applications
+- [Vs Code](https://code.visualstudio.com/) - Editor
+
 ## Getting Started
 
 First, run the development server:
