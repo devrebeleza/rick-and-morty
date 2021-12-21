@@ -1,4 +1,4 @@
-import { CharacterModel } from "../models/character";
+import { CharacterModel } from '../models/character';
 
 const removeItemFromArr = (arr, id) => {
   return arr.filter((e) => e.id !== id);
@@ -6,8 +6,12 @@ const removeItemFromArr = (arr, id) => {
 
 export const getLocalStorage = (nameStorage: string) => {
   let listStorageFavorite = [];
-  if (localStorage.getItem(nameStorage)) {
-    listStorageFavorite = [...JSON.parse(localStorage.getItem(nameStorage))];
+  const ISSERVER = typeof window === 'undefined';
+
+  if (!ISSERVER) {
+    if (localStorage.getItem(nameStorage)) {
+      listStorageFavorite = [...JSON.parse(localStorage.getItem(nameStorage))];
+    }
   }
   return listStorageFavorite;
 };
