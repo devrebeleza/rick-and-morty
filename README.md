@@ -6,7 +6,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Builded with 🛠️
 
-_Herramientas utilizadas_
+_Used Tools_
 
 - [NextJS](https://nextjs.org/) - The React Framework for Production
 - [ReactJS](https://reactjs.org/) - A JavaScript library for building user interfaces
