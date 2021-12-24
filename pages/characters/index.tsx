@@ -65,7 +65,6 @@ const Characters = () => {
   const setFavorites = (character: CharacterModel) => {
     character.selected = !character.selected;
     setUnsetElementFavouriteCharacters('FavoritesCharacaters', character);
-    //setUnsetElementLocalStorage('FavoritesCharacaters', character);
   };
 
   /*             -------------               */
