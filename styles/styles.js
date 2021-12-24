@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 // para definir el menú https://codepen.io/abdelrhmansaid/pen/OJRNOpQ
 // otra opción https://codepen.io/firepenguin/pen/KoyLZg
 /*.menu {
@@ -53,6 +53,7 @@ export const A = styled.a`
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    border-radius: 10px;
   }
 
   &:hover,
