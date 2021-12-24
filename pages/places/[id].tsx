@@ -1,15 +1,15 @@
-import { useQuery } from "@apollo/client";
-import { useRouter } from "next/router";
-import { GET_LOCATION } from "../../apollo/queries/locations";
-import { ComponentCharacters } from "../../components/characters/ComponentCharacters";
-import { Footer } from "../../components/generals/Footer";
-import { PersonalHead } from "../../components/generals/Head";
-import NavBar from "../../components/generals/Header";
-import { ScrollUp } from "../../components/generals/ScrollUp";
-import { SpinLoader } from "../../components/generals/SpinLoader";
-import { CardLocation } from "../../components/locations/CardLocation";
-import styles from "../../styles/Home.module.css";
-import { Back } from "../../styles/styles";
+import { useQuery } from '@apollo/client';
+import { useRouter } from 'next/router';
+import { GET_LOCATION } from '../../apollo/queries/locations';
+import { ComponentCharacters } from '../../components/characters/ComponentCharacters';
+import { Footer } from '../../components/generals/Footer';
+import { PersonalHead } from '../../components/generals/Head';
+import NavBar from '../../components/generals/Header';
+import { ScrollUp } from '../../components/generals/ScrollUp';
+import { SpinLoader } from '../../components/generals/SpinLoader';
+import { CardLocation } from '../../components/locations/CardLocation';
+import styles from '../../styles/Home.module.css';
+import { Back } from '../../styles/styles';
 
 const AEpisode = () => {
   const router = useRouter();
@@ -24,7 +24,7 @@ const AEpisode = () => {
   return (
     <>
       <PersonalHead title={id} />
-      <NavBar page="place" />
+      <NavBar page='place' />
       <main className={styles.main}>
         <Back onClick={() => router.back()}> ◀ Go Back</Back>
         <div className={styles.preTitle}>
@@ -35,7 +35,7 @@ const AEpisode = () => {
         ) : (
           <>
             <CardLocation location={data.location} />
-            <div>
+            <div className={styles.container}>
               Residents ({listResidents.length}):
               <ComponentCharacters list={listResidents} />
             </div>

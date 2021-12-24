@@ -1,16 +1,16 @@
-import { useQuery } from "@apollo/client";
-import { useRouter } from "next/router";
-import { GET_CHARACTER } from "../../apollo/queries/characters";
-import { OneCharacter } from "../../components/characters/OneCharacter";
-import { ComponentEpisodes } from "../../components/episodes/ComponentEpisodes";
-import { PersonalHead } from "../../components/generals/Head";
-import NavBar from "../../components/generals/Header";
-import { SpinLoader } from "../../components/generals/SpinLoader";
-import { CardLocation } from "../../components/locations/CardLocation";
-import styles from "../../styles/Home.module.css";
-import { Back } from "../../styles/styles";
-import { Footer } from "../../components/generals/Footer";
-import { ScrollUp } from "../../components/generals/ScrollUp";
+import { useQuery } from '@apollo/client';
+import { useRouter } from 'next/router';
+import { GET_CHARACTER } from '../../apollo/queries/characters';
+import { OneCharacter } from '../../components/characters/OneCharacter';
+import { ComponentEpisodes } from '../../components/episodes/ComponentEpisodes';
+import { PersonalHead } from '../../components/generals/Head';
+import NavBar from '../../components/generals/Header';
+import { SpinLoader } from '../../components/generals/SpinLoader';
+import { CardLocation } from '../../components/locations/CardLocation';
+import styles from '../../styles/Home.module.css';
+import { Back } from '../../styles/styles';
+import { Footer } from '../../components/generals/Footer';
+import { ScrollUp } from '../../components/generals/ScrollUp';
 
 const ACharacter = () => {
   const router = useRouter();
@@ -25,7 +25,7 @@ const ACharacter = () => {
   return (
     <>
       <PersonalHead title={id} />
-      <NavBar page="character" />
+      <NavBar page='character' />
       <main className={styles.main}>
         <Back onClick={() => router.back()}> ◀ Go Back</Back>
         <div className={styles.preTitle}>
@@ -36,10 +36,10 @@ const ACharacter = () => {
         ) : (
           <>
             <OneCharacter character={data.character} />
-            <div>
+            <div className={styles.container}>
               Origin Location:
               <CardLocation location={data.character.origin} />
-              Actual Location:{" "}
+              Actual Location:{' '}
               <CardLocation location={data.character.location} />
               Episodes ({listEpisodes.length}):
               <ComponentEpisodes list={listEpisodes} />
