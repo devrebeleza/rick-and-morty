@@ -14,6 +14,7 @@ _Used Tools_
 - [Apollo Client](https://www.apollographql.com/docs/react/) - Comprehensive state management library for JavaScript that enables you to manage both local and remote data with GraphQL
 - [TypeScript](https://www.typescriptlang.org/) - TypeScript is a strongly typed programming language that builds on JavaScript.
 - [Styled Components](https://styled-components.com/) - Library for React and React Native developers. It allows you to use component-level styles in your applications
+- [Context](https://reactjs.org/docs/context.html) - Context provides a way to pass data through the component tree without having to pass props down manually at every level.
 - [Vs Code](https://code.visualstudio.com/) - Editor
 
 ## Getting Started
