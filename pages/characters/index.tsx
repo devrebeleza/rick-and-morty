@@ -9,10 +9,6 @@ import { FooterPage } from '../../components/generals/FooterPage';
 import { SpinLoader } from '../../components/generals/SpinLoader';
 import { SearchBar } from '../../components/generals/SearchBar';
 import { CharacterModel } from '../../models/character';
-import {
-  getLocalStorage,
-  setUnsetElementLocalStorage,
-} from '../../contexts/LocalStorageFunctions';
 import { Footer } from '../../components/generals/Footer';
 import { ScrollUp } from '../../components/generals/ScrollUp';
 import { CartContext } from '../../contexts/CartContext';
