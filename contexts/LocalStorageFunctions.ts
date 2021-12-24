@@ -5,30 +5,33 @@ const removeItemFromArr = (arr, id) => {
 };
 
 export const getLocalStorage = (nameStorage: string) => {
-  let listStorageFavorite = [];
+  let listStorageFavourite = [];
   const ISSERVER = typeof window === 'undefined';
 
   if (!ISSERVER) {
     if (localStorage.getItem(nameStorage)) {
-      listStorageFavorite = [...JSON.parse(localStorage.getItem(nameStorage))];
+      listStorageFavourite = [...JSON.parse(localStorage.getItem(nameStorage))];
     }
   }
-  return listStorageFavorite;
+  return listStorageFavourite;
 };
 
 export const setUnsetElementLocalStorage = (
   nameStorage: string,
   character: CharacterModel
 ) => {
-  let listStorageFavorite = [];
-  listStorageFavorite = getLocalStorage(nameStorage);
+  let listStorageFavourite = [];
+  listStorageFavourite = getLocalStorage(nameStorage);
 
   if (character.selected) {
-    listStorageFavorite.push(character);
+    listStorageFavourite.push(character);
   } else {
-    listStorageFavorite = removeItemFromArr(listStorageFavorite, character.id);
+    listStorageFavourite = removeItemFromArr(
+      listStorageFavourite,
+      character.id
+    );
   }
   //
   localStorage.removeItem(nameStorage);
-  localStorage.setItem(nameStorage, JSON.stringify(listStorageFavorite));
+  localStorage.setItem(nameStorage, JSON.stringify(listStorageFavourite));
 };

@@ -1,10 +1,10 @@
-import Image from "next/image";
-import { Card } from "../../styles/styles";
-import styles from "../../styles/Home.module.css";
-import Link from "next/link";
-import { FavoriteCharacter } from "./FavoriteCharacter";
-import { useState } from "react";
-import { CharacterPropsFavorites } from "../../models/props";
+import Image from 'next/image';
+import { Card } from '../../styles/styles';
+import styles from '../../styles/Home.module.css';
+import Link from 'next/link';
+import { FavoriteCharacter } from './FavoriteCharacter';
+import { useState } from 'react';
+import { CharacterPropsFavorites } from '../../models/props';
 
 export const CardCharacter = (props: CharacterPropsFavorites) => {
   const [characterSelected, setCharacterSelected] = useState(

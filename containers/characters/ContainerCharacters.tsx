@@ -1,5 +1,5 @@
-import { CardCharacter } from "../../components/characters/CardCharacter";
-import styles from "../../styles/Home.module.css";
+import { CardCharacter } from '../../components/characters/CardCharacter';
+import styles from '../../styles/Home.module.css';
 
 export const ContainerCharacters = ({ list, setFavorites }) => {
   return (
